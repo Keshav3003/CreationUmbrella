@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Valentine Letter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Envelope Screen -->
+    <div id="envelope-container">
+      <img src="envelope.png" alt="Envelope" id="envelope" />
+      <p>Start ?</p>
+      <p>❤️ Tap The Letter for You ❤️</p>
+    </div>
+
+    <!-- Letter Screen -->
+    <div id="letter-container">
+      <div class="letter-window">
+        <h1 id="letter-title">Will you be my Valentine?</h1>
+
+        <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+        <div class="buttons" id="letter-buttons">
+          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+
+          <div class="no-wrapper">
+            <img src="no.png" class="btn no-btn" alt="No" />
+          </div>
+        </div>
+
+        <p id="final-text" class="final-text" style="display: none">
+          <strong>Hiii My Valentine</strong> Here's All My Love to You!!!! 
+        </p>
+        
+        <div id="continue-section" class="continue-section" style="display: none">
+          <a href="PART2/part2.html" class="continue-btn">Continue to Letter ♡</a>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bg-music" loop>
+      <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+      const music = document.getElementById("bg-music");
+    
+      function startMusic() {
+        if (music.paused) {
+          music.volume = 0.4;   // optional
+          music.play().catch(() => {});
+        }
+      }
+    
+      document.addEventListener("click", startMusic, { once: true });
+      document.addEventListener("keydown", startMusic, { once: true });
+    </script>
+    
+    
+    <script src="script.js"></script>
+  </body>
+</html>
