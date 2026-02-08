@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+
+      .welcome-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        padding: 20px;
+        animation: fadeIn 1s ease;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .welcome-title {
+        font-size: 64px;
+        font-family: 'Pacifico', cursive;
+        color: #ff1493;
+        text-shadow: 
+          4px 4px 0px rgba(255, 105, 180, 0.3),
+          -2px -2px 0px rgba(255, 255, 255, 0.5),
+          0px 0px 20px rgba(255, 105, 180, 0.6);
+        animation: slideInDown 1s ease 0.2s both;
+        margin: 0;
+        text-align: center;
+      }
+
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .images-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        animation: fadeInUp 1s ease 0.5s both;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .image-box {
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #ffc0cb, #ff69b4);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        box-shadow: 0 8px 16px rgba(255, 105, 180, 0.3);
+        animation: floatAndShake 3s ease-in-out infinite;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+      }
+
+      /* If using image URL, the image will show as background */
+      .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-box:hover {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .image-box:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .image-box:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      .image-box:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes floatAndShake {
+        0%, 100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-8px) rotate(-1deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(1deg);
+        }
+        75% {
+          transform: translateY(-8px) rotate(-0.5deg);
+        }
+      }
+
+      .message-box {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+        animation: fadeInUp 1s ease 0.8s both;
+        text-align: center;
+        max-width: 500px;
+      }
+
+      .message-text {
+        font-size: 26px;
+        color: #ff1493;
+        line-height: 1.6;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .sparkle-text {
+        display: inline-block;
+        animation: sparkle 1.5s ease-in-out infinite;
+      }
+
+      @keyframes sparkle {
+        0%, 100% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.3) rotate(20deg);
+        }
+      }
+
+      .continue-section {
+        animation: fadeInUp 1s ease 1.2s both;
+        text-align: center;
+      }
+
+      .continue-btn {
+        background: linear-gradient(135deg, #ff1493, #ff69b4);
+        color: white;
+        padding: 18px 50px;
+        border: none;
+        border-radius: 50px;
+        font-size: 28px;
+        font-family: "Pixelify Sans", sans-serif;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+        transition: all 0.3s ease;
+        font-weight: 700;
+      }
+
+      .continue-btn:hover {
+        transform: scale(1.15) translateY(-3px);
+        box-shadow: 0 10px 30px rgba(255, 20, 147, 0.6);
+      }
+
+      .hearts-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .floating-heart {
+        position: absolute;
+        font-size: 30px;
+        animation: floatUp 8s ease-in-out infinite;
+        opacity: 0.5;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.5;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .floating-heart:nth-child(1) { left: 15%; animation-delay: 0s; }
+      .floating-heart:nth-child(2) { left: 30%; animation-delay: 2s; }
+      .floating-heart:nth-child(3) { left: 45%; animation-delay: 4s; }
+      .floating-heart:nth-child(4) { left: 60%; animation-delay: 1s; }
+      .floating-heart:nth-child(5) { left: 75%; animation-delay: 3s; }
+      .floating-heart:nth-child(6) { left: 90%; animation-delay: 5s; }
+
+      @media (max-width: 600px) {
+        .welcome-title {
+          font-size: 48px;
+        }
+        
+        .images-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+        
+        .image-box {
+          font-size: 40px;
+        }
+        
+        .message-text {
+          font-size: 20px;
+        }
+        
+        .continue-btn {
+          font-size: 22px;
+          padding: 15px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating hearts background -->
+    <div class="hearts-container">
+      <div class="floating-heart">♡</div>
+      <div class="floating-heart">♡</div>
+      <div class="floating-heart">♡</div>
+      <div class="floating-heart">♡</div>
+      <div class="floating-heart">♡</div>
+      <div class="floating-heart">♡</div>
+    </div>
+
+    <!-- Main welcome content -->
+    <div class="welcome-container">
+      <h1 class="welcome-title">Welcome!</h1>
+
+      <!-- Image grid -->
+      <div class="images-grid">
+        <!-- Option 1: Use emojis (current) -->
+        <div class="image-box">💕</div>
+        <div class="image-box">🌹</div>
+        <div class="image-box">✨</div>
+        
+        <!-- Option 2: Use image URLs - Replace above with this format:
+        <div class="image-box" style="background-image: url('your-image1.jpg');"></div>
+        <div class="image-box" style="background-image: url('your-image2.jpg');"></div>
+        <div class="image-box" style="background-image: url('your-image3.jpg');"></div>
+        -->
+      </div>
+
+      <!-- Welcome message -->
+      <div class="message-box">
+        <p class="message-text">
+          <span class="sparkle-text">✨</span> 
+          Lets play a game, You have to answer this!
+          <span class="sparkle-text">✨</span>
+        </p>
+      </div>
+
+      <!-- Continue button -->
+      <div class="continue-section">
+        <a href="index.html" class="continue-btn">Continue ♡</a>
+      </div>
+    </div>
+    
+    <audio id="bg-music" loop>
+      <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+      const music = document.getElementById("bg-music");
+    
+      function startMusic() {
+        if (music.paused) {
+          music.volume = 0.4;   // optional
+          music.play().catch(() => {});
+        }
+      }
+    
+      document.addEventListener("click", startMusic, { once: true });
+      document.addEventListener("keydown", startMusic, { once: true });
+    </script>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Letter for You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="part2.css" />
+  </head>
+  <body>
+    <!-- Floating hearts background -->
+    <div class="hearts-background">
+      <div class="floating-heart" style="left: 10%; animation-delay: 0s;">♥</div>
+      <div class="floating-heart" style="left: 20%; animation-delay: 2s;">♥</div>
+      <div class="floating-heart" style="left: 30%; animation-delay: 4s;">♥</div>
+      <div class="floating-heart" style="left: 40%; animation-delay: 1s;">♥</div>
+      <div class="floating-heart" style="left: 50%; animation-delay: 3s;">♥</div>
+      <div class="floating-heart" style="left: 60%; animation-delay: 5s;">♥</div>
+      <div class="floating-heart" style="left: 70%; animation-delay: 2.5s;">♥</div>
+      <div class="floating-heart" style="left: 80%; animation-delay: 4.5s;">♥</div>
+      <div class="floating-heart" style="left: 90%; animation-delay: 1.5s;">♥</div>
+    </div>
+
+    <!-- Envelope Screen -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+      <div id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter-preview">
+          <div class="words line1">To: Anshu</div>
+          <div class="words line2">A love letter</div>
+          <div class="words line3">written from</div>
+          <div class="words line4">my heart ♥</div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+      </div>
+      <div class="reset">
+        <button id="openBtn">Open Letter</button>
+      </div>
+    </div>
+
+    <!-- Full Love Letter (hidden initially) -->
+    <div class="letter-container" id="letterContainer" style="display: none;">
+      <div class="letter-paper">
+        <div class="letter-header">
+          <h1 class="letter-to">To My Dearest Anshu ❤️</h1>
+          <div class="decorative-line"></div>
+        </div>
+
+        <div class="letter-content">
+          <p class="paragraph p1">
+            My Love,
+          </p>
+          
+          <p class="paragraph p2">
+            From the moment I first saw you, my world changed. Your smile lights up my darkest days, 
+            and your laugh is the most beautiful melody I've ever heard. Every moment spent with you 
+            feels like a precious gift that I treasure in my heart.
+          </p>
+
+          <p class="paragraph p3">
+            You are not just beautiful on the outside, but your soul shines with a radiance that 
+            captivates me completely. Your kindness, your warmth, and the way you see the world 
+            makes me fall in love with you more deeply every single day even with that <b> STFU!!</b>
+          </p>
+
+          <p class="paragraph p4">
+            When I'm with you, time stands still. When we're apart, you're all I think about. 
+            You've become my everything - my best friend, my confidant, my reason to smile, 
+            and the love of my life.
+          </p>
+
+          <p class="paragraph p5">
+            I want to create a thousand beautiful memories with you and expand our <b> BDBB</b>, hold your hand through every 
+            season of life, and wake up every morning grateful that you're mine. You make me want 
+            to be the best version of myself, and loving you has made me complete.
+          </p>
+
+          <p class="paragraph p6">
+            Thank you for being you, for choosing me, and for making my life infinitely better 
+            just by being in it. I promise to love you fiercely, support you endlessly, and 
+            cherish every moment we share together.
+          </p>
+
+          <p class="signature">
+            Forever and always yours,<br>
+            <span class="signature-name">With all my love 💕</span>
+          </p>
+        </div>
+
+        <div class="letter-footer">
+          <div class="decorative-hearts">
+            <span>❤️</span>
+            <span>💕</span>
+            <span>💖</span>
+            <span>💕</span>
+            <span>❤️</span>
+          </div>
+        </div>
+
+        <!-- Video Button -->
+        <div class="video-section">
+          <a href="https://drive.google.com/file/d/1Ovio6GX0y6FY-mCZl30x08tx_28DxQn6/view?usp=drivesdk" target="_blank" class="play-clip-btn" id="playClipBtn">
+            <span class="play-icon">▶</span>
+            Play Clip
+          </a>
+          <p class="video-hint">Watch something special for you ✨</p>
+        </div>
+
+        <!-- Close Button -->
+        <div class="close-letter-section">
+          <button id="closeBtn" class="close-letter-btn">Close Letter</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="part2.js"></script>
+  </body>
+</html>
